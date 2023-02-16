@@ -90,26 +90,31 @@ const characters = [
   '.',
   '?',
   '/',
-];
+]
 
-let n = 5;
+RandomNumbers = []
 
-const btn = document.querySelector('.btn');
-const pwBoxOne = document.querySelector('#p-box-one');
-const pwBoxTwo = document.querySelector('#pwbox2');
+let n = 5
+
+const btn = document.querySelector('.btn')
+const pwBoxOne = document.querySelector('#p-box-one')
+const pwBoxTwo = document.querySelector('#pwbox2')
 
 function pushPw() {
-  for (let i = 0; i < n; i++) {
-    let randomIndex = Math.floor(Math.random() * characters.length);
-    return randomIndex[characters];
+  for (let i = 0; i < 15; i++) {
+    let randomIndex = characters[Math.floor(Math.random() * characters.length)]
+    RandomNumbers.push(randomIndex)
   }
 }
 
-pushPw();
+pushPw()
+
+console.log(RandomNumbers)
 
 btn.addEventListener('click', function () {
-  let randomPW = pushPw();
-  pwBoxOne.textContent = randomPW;
-});
+  for (let i = 0; i < 15; i++) {
+    pwBoxOne.textContent = RandomNumbers[i]
+  }
+})
 
 // characters[Math.floor(Math.random() * characters.length)]

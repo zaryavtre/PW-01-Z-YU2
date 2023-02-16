@@ -71,4 +71,12 @@ body {
     height: 35px;
     border-radius: 0.5em;
     color: whitesmoke;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pw-p-box {
+    margin: 0;
 }
