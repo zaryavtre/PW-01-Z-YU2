@@ -93,6 +93,7 @@ const characters = [
 ]
 
 RandomNumbers = []
+boxNumbers2 = []
 
 let n = 5
 
@@ -103,18 +104,23 @@ const pwBoxTwo = document.querySelector('#pwbox2')
 function pushPw() {
   for (let i = 0; i < 15; i++) {
     let randomIndex = characters[Math.floor(Math.random() * characters.length)]
+
     RandomNumbers.push(randomIndex)
+  }
+  for (let i = 0; i < 15; i++) {
+    let index2 = characters[Math.floor(Math.random() * characters.length)]
+
+    boxNumbers2.push(index2)
   }
 }
 
-pushPw()
-
-console.log(RandomNumbers)
-
 btn.addEventListener('click', function () {
   for (let i = 0; i < 15; i++) {
-    pwBoxOne.textContent = RandomNumbers[i]
+    pwBoxOne.textContent = RandomNumbers.join('')
+    pwBoxTwo.textContent = RandomNumbers.join('')
   }
+
+  pushPw()
 })
 
 // characters[Math.floor(Math.random() * characters.length)]
