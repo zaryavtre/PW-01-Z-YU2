@@ -92,10 +92,9 @@ const characters = [
   '/',
 ]
 
-RandomNumbers = []
-boxNumbers2 = []
-
-let n = 5
+let RandomNumbers = []
+let boxNumbers2 = []
+let isAlive = false
 
 const btn = document.querySelector('.btn')
 const pwBoxOne = document.querySelector('#p-box-one')
@@ -115,12 +114,16 @@ function pushPw() {
 }
 
 btn.addEventListener('click', function () {
-  for (let i = 0; i < 15; i++) {
+  if (isAlive === false) {
+    pushPw()
     pwBoxOne.textContent = RandomNumbers.join('')
-    pwBoxTwo.textContent = RandomNumbers.join('')
+    pwBoxTwo.textContent = boxNumbers2.join('')
+    isAlive = true
+  } else {
+    RandomNumbers = []
+    boxNumbers2 = []
+    isAlive = false
   }
-
-  pushPw()
 })
 
 // characters[Math.floor(Math.random() * characters.length)]
