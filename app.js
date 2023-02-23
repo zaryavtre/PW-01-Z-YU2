@@ -114,16 +114,11 @@ function pushPw() {
 }
 
 btn.addEventListener('click', function () {
-  if (isAlive === false) {
     pushPw()
     pwBoxOne.textContent = RandomNumbers.join('')
     pwBoxTwo.textContent = boxNumbers2.join('')
-    isAlive = true
-  } else {
     RandomNumbers = []
     boxNumbers2 = []
-    isAlive = false
-  }
 })
 
 // characters[Math.floor(Math.random() * characters.length)]
